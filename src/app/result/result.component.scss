@@ -1,0 +1,79 @@
+// Colors Style Start
+	$primaryColor: #35B8B8;
+	$grayColor: #f2f2f2;
+	$blackColor: #4b4b4b;
+	$whiteColor: #FFF;
+// Colors Style End
+
+// Classes List Style Start
+	.classesList {
+	    display:inline-block;
+	    margin:15px 0;
+	    padding:0 15px;
+		
+		// Box Items
+	    .item{
+			width:33%;
+			float:left;
+
+			.inner{
+				background:$whiteColor;
+				color:$blackColor;
+				overflow:hidden;
+				border-radius:6px;
+				margin:15px;
+				padding:24px;
+			}
+		}
+
+		// Title 
+		.title {
+			min-height:80px;
+			overflow:hidden;
+		}
+
+		// ID
+		.idBar{
+			background:$primaryColor;
+			color:$whiteColor;
+	    	display:block;
+	    	padding:15px 22px;
+	    	margin:-24px;
+	    	margin-bottom:24px;
+	    	font-weight:bold;
+		}
+
+		// Date and TIme
+		.date_time{
+			margin:18px 0;
+			font-size:14px;
+		}
+	}
+// Classes List Style End
+
+// Result Msg Style End
+	.resultMsg {
+		padding: 0 24px;
+	    text-align: center;
+	    margin: 35px 0 0;
+	    color:$blackColor;
+	    h2{
+	    	font-size:24px;
+	    	margin:0;
+	    }
+	}
+// Result Msg Style End
+
+// Responsive Start
+	@media(max-width:1024px){
+		.classesList {
+	    	.item{width:50%;}
+		}
+	}
+	@media(max-width:640px){
+		.classesList {
+			padding:0;   
+	    	.item{width:100%;}
+		}
+	}	
+// Responsive End

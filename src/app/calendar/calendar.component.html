@@ -1,0 +1,14 @@
+<div class="calendarSearch">
+	<h2>Search Your Classes</h2>
+	<form action="javascript:;" class="d-flex" (ngSubmit)="postService.getPosts(calender.startDate, calender.endDate)">
+		<div class="form-group">
+			<label for="startDate">Start Date</label>
+			<input type="date" class="form-control" id="startDate" placeholder="Enter Start Date" [(ngModel)]="calender.startDate" [ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="form-group">
+			<label for="endDate">End Date</label>
+			<input type="date" class="form-control" id="endDate" placeholder="Enter End Date" [(ngModel)]="calender.endDate" [ngModelOptions]="{standalone: true}">
+		</div>
+		<button type="submit" class="btn btnOrange">Search Classes</button>
+	</form>
+</div>
