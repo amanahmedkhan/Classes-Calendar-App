@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { PostService } from './../post.service';
+
 import { formatDate } from './../helpers';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './../modal/modal.component';
+import { ModalDetailComponent } from './../modal-detail/modal-detail.component';
 
 @Component({
     selector: 'app-result',
@@ -9,7 +13,7 @@ import { formatDate } from './../helpers';
 })
 
 export class ResultComponent {
-    constructor(private postService: PostService) {}
+    constructor(private postService: PostService, private modalService: NgbModal) {}
     formatDate = formatDate;
   
     async ngOnInit () {
@@ -18,9 +22,9 @@ export class ResultComponent {
         this.postService.getPosts(currentDate, add7Days);
 	}
 
-    // ngModal
-    showModal = false;
-    toggleModal = () => {
-        this.showModal = !this.showModal;
+    moreDetail() {
+        // const modalRef = this.modalService.open(ModalComponent);
+        const modalRef = this.modalService.open(ModalDetailComponent);
+        modalRef.componentInstance.title = 'More Detail About Classes';
     }
 }

@@ -1,20 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PostService } from './../post.service';
+import { Component, Input } from '@angular/core';
+import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'app-modal',
-	templateUrl: './modal.component.html',
-	styleUrls: ['./modal.component.scss']
+	templateUrl: './modal.component.html'
 })
-export class ModalComponent implements OnInit {
 
-	// ngModal
-	@Input() show = false;
-	@Input() customClass = '';
-	@Input() closeCallback = () => (false);
-	
-	constructor(private postService: PostService) { }
+export class ModalComponent {
 
-	ngOnInit() {
-	}
+	@Input() title = `Information`;
+
+	constructor(public activeModal: NgbActiveModal) {}
 }

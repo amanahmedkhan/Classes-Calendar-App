@@ -5,25 +5,36 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ResultComponent } from './result/result.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalDetailComponent } from './modal-detail/modal-detail.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CalendarComponent,
 		ResultComponent,
-		ModalComponent
+		ModalComponent,
+		ModalDetailComponent,
+		DetailComponent
 	],
 	imports: [
 		BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        NgbModule.forRoot()
 	],
-	providers: [],
-	bootstrap: [AppComponent]
+	providers: [
+		NgbActiveModal
+	],
+	bootstrap: [AppComponent],
+	entryComponents: [
+    	ModalDetailComponent
+    ]
 })
 
 export class AppModule { }

@@ -14,13 +14,7 @@
 				<p>Start Date: <strong>{{formatDate(post.start)}}</strong></p>
 				<p>End Date: <strong>{{formatDate(post.end)}}</strong></p>
 			</div>
-			<a (click)="toggleModal()" class="btn btnOrange">More Detail</a>
+			<a (click)="moreDetail()" class="btn btnOrange">More Detail</a>
 		</div>
 	</div>
 </div>
-
-<app-modal
-    [show]="showModal"
-    [closeCallback]="toggleModal">
-    <iframe src="https://skilldeer.com/" frameBorder="0"></iframe>
-</app-modal>
